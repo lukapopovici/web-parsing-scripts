@@ -19,8 +19,9 @@ def scrape_website(url, recursion_level):
             for link in links:
                 if 'href' in link.attrs:
                     absolute_url = urljoin(url, link['href'])
-                    print(absolute_url)
-                    f.write(absolute_url + '\n')
+                    #printing 
+                    print("[*]Recursion level: "+str(recursion_level)+" "+absolute_url)
+                    f.write("[*]Recursion level: "+str(recursion_level)+" "+absolute_url)
 
                     if recursion_level > 0:
                         scrape_website(absolute_url, recursion_level - 1)
@@ -33,6 +34,6 @@ if len(sys.argv) != 3:
 else:
     # get function parameters as arguments from the cmd
     website_url = sys.argv[1]
-    recursion_level = int(sys.argv[2])
+    recursion_level = int(sys.argv[2])-1
 
     scrape_website(website_url, recursion_level)
