@@ -53,8 +53,7 @@ with open("results.xml", "a") as f:
     f.write("<?xml version=\"1.0\"?> \n")
     f.write("<articles> \n")
 
-    WebDriverWait(driver, 5).until(EC.invisibility_of_element_located((By.CLASS_NAME, 'loading-spinner')))  # Halved waiting time to 5 seconds
-
+    WebDriverWait(driver, 5).until(EC.invisibility_of_element_located((By.CLASS_NAME, 'loading-spinner')))  
     h3_elements = driver.find_elements(By.TAG_NAME, 'h3')
 
     for post_num, h3_element in enumerate(h3_elements, start=1):
