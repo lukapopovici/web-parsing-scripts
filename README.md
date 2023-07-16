@@ -5,6 +5,9 @@
 A repository for web scrapers mostly written in Python using the Selenium framework.
 I'll add more to this repository as I learn more. 
 
+# Why does this exist?
+I've been curious for a while about why some websites have the "Prove you are not a robot" prompt before allowing you acces to their content. Then, I found out about data mining and browser automation. I made this repository to document my learning process in this field.
+
 ## [Github page scraper](https://github.com/lukapopovici/web-parsing-scripts/blob/main/Github_scraper.py)
 This scraper retrieves the links of trending projects from a topic page specified as a parameter. <br />
 The script utilizes Selenium to dynamically load new articles based on the value of the other parameter. Each increment of the parameter loads 40 more entries from the page.To begin the scraping process, the script first loads the initial page. Then, it continuously clicks on the "Load more" button as specified by the second parameter. This allows for the retrieval of additional content. Once all the desired content has been loaded, it will be extracted and stored in an XML file.<br />
